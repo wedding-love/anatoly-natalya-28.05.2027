@@ -626,13 +626,13 @@
       line-height: 1.2;
     }
 
+    /* ====== БЛОК "ПРИМЕРЫ НАРЯДОВ" — СЕТКА 2×2 ====== */
     .references-wrapper {
       width: calc(100% + 40px);
       margin-left: -20px;
       margin-right: -20px;
       background: linear-gradient(145deg, #c9a8cc 0%, #b088b3 100%);
-      padding-top: 20px;
-      padding-bottom: 0;
+      padding: 20px 20px 24px;
       margin-top: 0;
     }
 
@@ -644,37 +644,31 @@
       text-align: center;
       letter-spacing: 1px;
       margin-bottom: 14px;
-      padding: 0 8px;
+      padding: 0 4px;
     }
-
-    .scroll-container {
-      width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      scroll-behavior: smooth;
-      padding: 0;
-      margin: 0;
-    }
-    .scroll-container::-webkit-scrollbar { display: none; }
 
     .images-row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      width: max-content;
-      gap: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      width: 100%;
       padding: 0;
       margin: 0;
     }
 
     .ref-image {
-      width: 170px;
-      height: 230px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
       object-fit: cover;
-      flex-shrink: 0;
       display: block;
+      border-radius: 6px;
+      background: rgba(255, 250, 216, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ref-image:hover {
+      transform: scale(1.04);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     }
 
     /* ============ ШЕСТОЙ ЭКРАН ============ */
@@ -1018,7 +1012,6 @@
       .timing-item { padding: 12px 14px; gap: 10px; }
       .white-rectangle { padding: 22px 14px 0; }
       .tape-sticker { width: 55px; top: -28px; }
-      .ref-image { width: 130px; height: 180px; }
       .dresscode-container { gap: 18px; }
       .gift-image { width: min(90%, 280px); }
       .drinks-grid { grid-template-columns: 1fr; gap: 10px; }
@@ -1036,7 +1029,6 @@
       .color-square { width: 44px; height: 44px; }
       .color-swatches { gap: 12px; }
       .color-label { font-size: 0.65rem; }
-      .references-wrapper { margin-left: -14px; margin-right: -14px; width: calc(100% + 28px); }
       .final-form { gap: 16px; }
       .hero-image-section { padding: 0 12px 0; }
       .final-subtitle { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
@@ -1046,6 +1038,14 @@
       .final-contacts { gap: 6px; padding-top: 6px; }
       .final-contacts-title { font-size: clamp(1.5rem, 4.5vw, 1.8rem); }
       .location-img-container { border-width: 2px; }
+      .references-wrapper {
+        margin-left: -14px;
+        margin-right: -14px;
+        width: calc(100% + 28px);
+        padding: 16px 14px 20px;
+      }
+      .images-row { gap: 10px; }
+      .ref-image { border-radius: 4px; }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
@@ -1059,20 +1059,24 @@
       .screen-sixth { padding: 45px 22px 55px 22px; }
       .screen-final { padding: 45px 22px 55px 22px; }
       .location-photo-wrapper { max-width: 360px; }
-      .ref-image { width: 150px; height: 205px; }
       .calendar-image-wrapper { max-width: 380px; }
       .color-square { width: 48px; height: 48px; }
-      .references-wrapper { margin-left: -22px; margin-right: -22px; width: calc(100% + 44px); }
       .gift-image { width: min(90%, 340px); }
       .submit-btn { margin-bottom: 12px; }
       .final-container { gap: 26px; }
       .full-width-heart { max-width: 400px; }
+      .references-wrapper {
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+        padding: 20px 20px 24px;
+      }
+      .images-row { gap: 12px; }
     }
 
     @media (min-width: 768px) {
       .invitation-card { max-width: 620px; box-shadow: 0 0 50px rgba(60, 42, 60, 0.05); border-radius: 32px; min-height: 95vh; }
       body { padding: 20px 0; }
-      .ref-image { width: 190px; height: 260px; }
       .gift-image { width: min(90%, 420px); }
       .screen-second { padding: 30px 32px 35px; }
       .invitation-content { gap: 14px; padding-top: 20px; }
@@ -1086,11 +1090,17 @@
       .calendar-image-wrapper { max-width: 420px; }
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
       .color-square { width: 58px; height: 58px; }
-      .references-wrapper { margin-left: -32px; margin-right: -32px; width: calc(100% + 64px); }
       .full-width-heart { max-width: 520px; }
       .screen-first { margin-bottom: -5px; }
       .final-container { gap: 30px; }
       .final-contacts { padding-top: 20px; }
+      .references-wrapper {
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+        padding: 24px 24px 28px;
+      }
+      .images-row { gap: 16px; }
     }
   </style>
 </head>
@@ -1113,7 +1123,7 @@
     </div>
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <img src="дети.png" alt="Счастливые дети" class="kids-image" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=👶+Дети'; this.onerror=null;">
+        <img src="Изображение 1-Photoroom.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/fefad8/c9a8cc?text=💑+Фото'; this.onerror=null;">
       </div>
     </div>
     <div class="kids-marquee fade-up-item delay-4">
@@ -1222,14 +1232,11 @@
 
         <div class="references-wrapper">
           <div class="ref-subtitle">Примеры нарядов</div>
-          <div class="scroll-container">
-            <div class="images-row">
-              <img src="1.jpg" class="ref-image" alt="" onerror="this.src='https://placehold.co/170x230/FFD1DC/3d2a3d?text=🌸';">
-              <img src="2.jpg" class="ref-image" alt="" onerror="this.src='https://placehold.co/170x230/B5EAD7/3d2a3d?text=🌿';">
-              <img src="3.jpg" class="ref-image" alt="" onerror="this.src='https://placehold.co/170x230/C9E4FF/3d2a3d?text=💎';">
-              <img src="4.jpg" class="ref-image" alt="" onerror="this.src='https://placehold.co/170x230/F7DC6F/3d2a3d?text=🌼';">
-              <img src="5.jpg" class="ref-image" alt="" onerror="this.src='https://placehold.co/170x230/E8D5B7/3d2a3d?text=🥂';">
-            </div>
+          <div class="images-row">
+            <img src="a5d1bfa5376dab8ccce71c17cda1d93c.jpg" class="ref-image" alt="Пример наряда 1" onerror="this.src='https://placehold.co/300x300/FFD1DC/3d2a3d?text=🌸';">
+            <img src="e5cae9e12011e28ea6418c47674250dd.jpg" class="ref-image" alt="Пример наряда 2" onerror="this.src='https://placehold.co/300x300/B5EAD7/3d2a3d?text=🌿';">
+            <img src="93e1938ffefa5c7850d59bb6ff7c5267.jpg" class="ref-image" alt="Пример наряда 3" onerror="this.src='https://placehold.co/300x300/C9E4FF/3d2a3d?text=💎';">
+            <img src="257a5848a4bb34a29054b23a2082b9cc.jpg" class="ref-image" alt="Пример наряда 4" onerror="this.src='https://placehold.co/300x300/F7DC6F/3d2a3d?text=🌼';">
           </div>
         </div>
       </div>
