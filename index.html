@@ -103,33 +103,34 @@
     /* ============ ПЕРВЫЙ ЭКРАН НА ВСЮ ВЫСОТУ ============ */
     .screen-first {
       min-height: 100vh;
-      min-height: 100dvh; /* Для корректной работы в мобильных браузерах */
+      min-height: 100dvh; 
       display: flex;
       flex-direction: column;
       background-color: #f9f6f0;
       overflow: hidden;
     }
 
+    /* ЭКРАН 2: ДАТА (БОРДО) */
     .screen-second {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      background-color: #f9f6f0;
-      padding: 30px 28px 30px;
+      background: #3a161e;
+      padding: 30px 28px 40px;
       min-height: auto;
       margin-top: 0;
     }
 
-    /* БЛОК 1: ЛОКАЦИЯ (БОРДО) */
+    /* БЛОК 3: ЛОКАЦИЯ (ОЛИВА) */
     .screen-third {
-      background: #3a161e;
+      background: #524c36;
       padding: 50px 28px;
       justify-content: center;
       align-items: center;
       min-height: auto;
     }
 
-    /* БЛОК 2: ТАЙМИНГ (СВЕТЛЫЙ) */
+    /* БЛОК 4: ТАЙМИНГ (СВЕТЛЫЙ) */
     .screen-fourth {
       background-color: #f9f6f0;
       padding: 50px 24px 60px;
@@ -138,16 +139,16 @@
       min-height: auto;
     }
 
-    /* БЛОК 3: ДРЕСС-КОД (ОЛИВА) */
+    /* БЛОК 5: ДРЕСС-КОД (БОРДО) */
     .screen-fifth {
-      background: #524c36;
+      background: #3a161e;
       padding: 50px 28px 35px;
       justify-content: center;
       align-items: center;
       min-height: auto;
     }
 
-    /* БЛОК 4: ПОЖЕЛАНИЯ (СВЕТЛЫЙ) */
+    /* БЛОК 6: ПОЖЕЛАНИЯ (СВЕТЛЫЙ) */
     .screen-sixth {
       background-color: #f9f6f0;
       padding: 50px 28px 60px 28px;
@@ -156,9 +157,9 @@
       min-height: auto;
     }
 
-    /* БЛОК 5: АНКЕТА (БОРДО) */
+    /* БЛОК 7: АНКЕТА (ОЛИВА) */
     .screen-final {
-      background: #3a161e;
+      background: #524c36;
       padding: 50px 28px 60px 28px;
       justify-content: center;
       align-items: center;
@@ -233,13 +234,12 @@
     .dialog-left { text-align: left; flex: 1.2; min-width: 100px; }
     .dialog-right { text-align: right; flex: 0.9; min-width: 60px; }
 
-    /* Растягиваем блок с фото на оставшееся пространство */
     .hero-image-section {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      min-height: 0; /* Важно для flex-контейнера */
+      min-height: 0;
       padding: 0 12px 0;
       width: 100%;
     }
@@ -253,7 +253,6 @@
       justify-content: center;
     }
 
-    /* Фото растягивается, чтобы заполнить пустоту, но сохраняет пропорции */
     .kids-image {
       width: 100%;
       height: 100%;
@@ -266,7 +265,6 @@
     }
     .kids-image:hover { transform: translateY(0); }
 
-    /* Бегущая строка всегда прижата к низу */
     .kids-marquee {
       width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -274,7 +272,7 @@
       overflow: hidden;
       background: #3a161e;
       padding: 10px 0;
-      margin-top: auto; /* Прижимает к низу */
+      margin-top: auto;
       flex-shrink: 0;
       position: relative;
       opacity: 1 !important;
@@ -306,7 +304,7 @@
       to { transform: translateX(-50%); }
     }
 
-    /* ============ ВТОРОЙ ЭКРАН ============ */
+    /* ============ ВТОРОЙ ЭКРАН (ДАТА) ============ */
     .invitation-content {
       display: flex;
       flex-direction: column;
@@ -324,7 +322,7 @@
       font-family: "Bad Script", cursive;
       font-weight: 400;
       font-size: clamp(1.4rem, 5vw, 2rem);
-      color: #3a161e;
+      color: #f9f6f0; /* Светлый текст на бордо */
       text-align: center;
       line-height: 1.9;
       width: 100%;
@@ -337,11 +335,11 @@
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
       font-size: clamp(3.5rem, 13vw, 5.5rem);
-      color: #3a161e;
+      color: #f9f6f0; /* Светлый текст на бордо */
       text-align: center;
       letter-spacing: 4px;
       line-height: 1.1;
-      text-shadow: 1.5px 1.5px 0px rgba(58, 22, 30, 0.15);
+      text-shadow: 1.5px 1.5px 0px rgba(249, 246, 240, 0.15);
       transform: rotate(-0.3deg);
       margin: 0;
       word-break: break-word;
@@ -566,7 +564,7 @@
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
-      padding: 32px 20px 24px;
+      padding: 32px 20px 0; /* Нижний отступ убран */
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       border: 1px solid #d4c3a3;
@@ -625,6 +623,7 @@
       width: calc(100% + 40px);
       margin-left: -20px;
       margin-right: -20px;
+      margin-bottom: 0;
       background: transparent;
       padding: 0;
       margin-top: 0;
@@ -660,10 +659,10 @@
 
     .ref-image {
       width: 180px;
-      height: 280px;
+      height: 280px; /* Вытянутые вниз */
       flex-shrink: 0;
       object-fit: cover;
-      border-radius: 0;
+      border-radius: 0; /* Без скруглений */
       scroll-snap-align: start;
       display: block;
     }
@@ -783,7 +782,7 @@
       color: rgba(249, 246, 240, 0.5);
     }
     .form-select option {
-      background: #3a161e;
+      background: #524c36;
       color: #f9f6f0;
     }
 
@@ -1001,7 +1000,7 @@
       .dialog-area { margin-bottom: 6px; }
       .calendar-image-wrapper { max-width: 280px; }
       .location-photo-wrapper { max-width: 300px; }
-      .screen-second { padding: 20px 14px 25px; }
+      .screen-second { padding: 20px 14px 30px; }
       .invitation-content { gap: 12px; padding-top: 15px; }
       .screen-third { padding: 40px 16px; }
       .screen-fourth { padding: 35px 16px 45px; }
@@ -1010,7 +1009,7 @@
       .screen-final { padding: 40px 16px 50px 16px; }
       .timing-section-title { margin-bottom: 14px; }
       .timing-item { padding: 12px 14px; gap: 10px; }
-      .white-rectangle { padding: 22px 14px 20px; }
+      .white-rectangle { padding: 22px 14px 0; }
       .tape-sticker { width: 55px; top: -28px; }
       .dresscode-container { gap: 18px; }
       .gift-image { width: min(90%, 280px); }
@@ -1044,7 +1043,7 @@
 
     @media (min-width: 481px) and (max-width: 767px) {
       .first-content { padding: 40px 22px 10px; }
-      .screen-second { padding: 25px 22px 28px; }
+      .screen-second { padding: 25px 22px 35px; }
       .invitation-content { gap: 12px; padding-top: 18px; }
       .screen-third { padding: 45px 22px; }
       .screen-fourth { padding: 40px 22px 50px; }
@@ -1067,7 +1066,7 @@
       .invitation-card { max-width: 620px; box-shadow: 0 0 50px rgba(58, 22, 30, 0.08); border-radius: 32px; min-height: 95vh; }
       body { padding: 20px 0; }
       .gift-image { width: min(90%, 420px); }
-      .screen-second { padding: 30px 32px 35px; }
+      .screen-second { padding: 30px 32px 45px; }
       .invitation-content { gap: 14px; padding-top: 20px; }
       .screen-third { padding: 55px 32px; }
       .screen-fourth { padding: 50px 32px 60px; }
@@ -1129,7 +1128,7 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 2: Приглашение -->
+  <!-- ЭКРАН 2: Приглашение и Дата (БОРДО) -->
   <section class="screen screen-second">
     <div class="invitation-content fade-up-item delay-1">
       <div class="invitation-greeting">
@@ -1145,7 +1144,7 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 3: Локация (БОРДО) -->
+  <!-- ЭКРАН 3: Локация (ОЛИВА) -->
   <section class="screen screen-third">
     <div class="location-content">
       <div class="location-label fade-up-item">Локация</div>
@@ -1186,7 +1185,7 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 5: ДРЕСС-КОД (ОЛИВА) -->
+  <!-- ЭКРАН 5: ДРЕСС-КОД (БОРДО) -->
   <section class="screen screen-fifth">
     <div class="dresscode-container">
       <div class="dresscode-title fade-up-item delay-1">Дресс-код</div>
@@ -1230,7 +1229,7 @@
     </div>
   </section>
 
-  <!-- ФИНАЛЬНЫЙ БЛОК: АНКЕТА + КОНТАКТЫ (БОРДО) -->
+  <!-- ФИНАЛЬНЫЙ БЛОК: АНКЕТА + КОНТАКТЫ (ОЛИВА) -->
   <section class="screen screen-final">
     <div class="final-container">
       <div class="final-title fade-up-item delay-1">Анкета гостя</div>
