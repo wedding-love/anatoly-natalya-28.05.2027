@@ -100,7 +100,7 @@
       flex-shrink: 0;
     }
 
-    /* ИЗМЕНЕНИЕ: убран min-height 85vh, теперь высота по содержимому */
+    /* Первый экран - по размеру контента, не на весь экран */
     .screen-first {
       display: flex;
       flex-direction: column;
@@ -167,7 +167,7 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 40px 24px 10px; /* Добавлен аккуратный отступ сверху */
+      padding: 40px 24px 10px;
       text-align: center;
     }
 
@@ -245,10 +245,10 @@
       justify-content: center;
     }
 
-    /* ИЗМЕНЕНИЕ: добавлено ограничение по высоте, чтобы картинка не занимала весь экран */
+    /* Картинка не выше 50% экрана */
     .kids-image {
       width: 100%;
-      max-height: 50vh; /* Картинка не будет выше половины экрана телефона */
+      max-height: 50vh;
       object-fit: contain;
       filter: drop-shadow(0 4px 10px rgba(58, 22, 30, 0.08));
       border-radius: 8px 8px 0 0;
@@ -632,33 +632,53 @@
 
     .images-row {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       width: 100%;
       overflow-x: auto;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 8px;
+      padding: 4px 4px 16px 4px; /* Отступ для теней */
     }
 
     .images-row::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
+      display: none; 
     }
 
-    .ref-image {
-      width: 200px;
-      height: 200px;
+    /* Обертка слайда с чередующимся цветом */
+    .ref-slide {
       flex-shrink: 0;
-      object-fit: cover;
-      border-radius: 8px;
+      padding: 8px;
+      border-radius: 12px;
       scroll-snap-align: start;
-      background: rgba(58, 22, 30, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .ref-image:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+    /* Чередование цветов (бордо и олива) */
+    .ref-slide:nth-child(odd) {
+      background-color: #3a161e;
+    }
+
+    .ref-slide:nth-child(even) {
+      background-color: #524c36;
+    }
+
+    /* Вытянутое вниз фото */
+    .ref-image {
+      width: 160px;
+      height: 250px; /* Прямоугольник вытянут вниз */
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      background: rgba(249, 246, 240, 0.1);
+    }
+
+    .ref-slide:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
     }
 
     /* ============ ШЕСТОЙ ЭКРАН (ПОЖЕЛАНИЯ) ============ */
@@ -1015,7 +1035,7 @@
       .kids-marquee { padding: 6px 0; }
       .kids-marquee-track span { font-size: clamp(0.7rem, 2vw, 0.85rem); padding: 0 25px 0 0; }
       .full-width-heart { padding: 0 8px; }
-      .kids-image { max-height: 45vh; } /* Чуть меньше на мобильных */
+      .kids-image { max-height: 45vh; }
       .location-btn { padding: 12px 26px; font-size: 1rem; }
       .final-form { gap: 16px; }
       .hero-image-section { padding: 0 12px 0; }
@@ -1030,7 +1050,7 @@
       .color-photos-grid { gap: 8px; margin-bottom: 24px; }
       .color-photo { width: 48px; height: 48px; }
       
-      .ref-image { width: 150px; height: 150px; }
+      .ref-image { width: 140px; height: 220px; } /* Мобильная версия слайдов */
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
@@ -1051,7 +1071,7 @@
       .full-width-heart { max-width: 400px; }
       
       .color-photo { width: 56px; height: 56px; }
-      .ref-image { width: 180px; height: 180px; }
+      .ref-image { width: 150px; height: 235px; } /* Планшет */
     }
 
     @media (min-width: 768px) {
@@ -1074,7 +1094,7 @@
       .final-container { gap: 30px; }
       .final-contacts { padding-top: 20px; }
       
-      .ref-image { width: 220px; height: 220px; }
+      .ref-image { width: 170px; height: 260px; } /* Десктоп */
     }
   </style>
 </head>
@@ -1194,14 +1214,22 @@
           <img src="5dbd7e0aaaed7dcad2e57a93d142095a.png" class="color-photo" alt="Палитра 9" onerror="this.src='https://placehold.co/150x150/c1b29b/3a161e?text=9';">
         </div>
 
-        <!-- Примеры нарядов (слайдер) -->
+        <!-- Примеры нарядов (слайдер с чередующимися цветами) -->
         <div class="references-wrapper">
           <div class="ref-subtitle">Примеры нарядов</div>
           <div class="images-row">
-            <img src="e5cae9e12011e28ea6418c47674250dd.jpg" class="ref-image" alt="Пример наряда 1" onerror="this.src='https://placehold.co/300x300/3a161e/f9f6f0?text=1';">
-            <img src="a5d1bfa5376dab8ccce71c17cda1d93c.jpg" class="ref-image" alt="Пример наряда 2" onerror="this.src='https://placehold.co/300x300/524c36/f9f6f0?text=2';">
-            <img src="93e1938ffefa5c7850d59bb6ff7c5267.jpg" class="ref-image" alt="Пример наряда 3" onerror="this.src='https://placehold.co/300x300/b58388/f9f6f0?text=3';">
-            <img src="257a5848a4bb34a29054b23a2082b9cc.jpg" class="ref-image" alt="Пример наряда 4" onerror="this.src='https://placehold.co/300x300/c1b29b/3a161e?text=4';">
+            <div class="ref-slide">
+              <img src="e5cae9e12011e28ea6418c47674250dd.jpg" class="ref-image" alt="Пример наряда 1" onerror="this.src='https://placehold.co/300x400/3a161e/f9f6f0?text=1';">
+            </div>
+            <div class="ref-slide">
+              <img src="a5d1bfa5376dab8ccce71c17cda1d93c.jpg" class="ref-image" alt="Пример наряда 2" onerror="this.src='https://placehold.co/300x400/524c36/f9f6f0?text=2';">
+            </div>
+            <div class="ref-slide">
+              <img src="93e1938ffefa5c7850d59bb6ff7c5267.jpg" class="ref-image" alt="Пример наряда 3" onerror="this.src='https://placehold.co/300x400/3a161e/f9f6f0?text=3';">
+            </div>
+            <div class="ref-slide">
+              <img src="257a5848a4bb34a29054b23a2082b9cc.jpg" class="ref-image" alt="Пример наряда 4" onerror="this.src='https://placehold.co/300x400/524c36/f9f6f0?text=4';">
+            </div>
           </div>
         </div>
       </div>
