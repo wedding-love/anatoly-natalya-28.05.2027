@@ -19,6 +19,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
+    /* Цветовая гамма по референсу (Бордо, Кремовый, Оливковый) */
+    :root {
+      --cream: #F5F0EB;       /* Теплый кремовый вместо белого */
+      --burgundy: #401317;    /* Глубокий винный/бордовый */
+      --olive: #5A624A;       /* Оливковый (акценты, пуговицы, ссылки) */
+      --text-dark: #2C1E16;   /* Темно-коричневый для светлого фона */
+      --text-light: #F5F0EB;  /* Кремовый для темного фона */
+      --border-dark: rgba(44, 30, 22, 0.2);
+      --border-light: rgba(245, 240, 235, 0.3);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -53,7 +64,7 @@
       height: 100dvh;
       z-index: 1000;
       cursor: pointer;
-      background-color: #eae3d9;
+      background-color: var(--cream);
       transition: opacity 2.5s ease-in-out, filter 2.5s ease-in-out, transform 3s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
     }
@@ -98,7 +109,7 @@
     }
     .particle {
       position: absolute;
-      background: radial-gradient(circle, rgba(234, 227, 217, 0.6), transparent);
+      background: radial-gradient(circle, rgba(245, 240, 235, 0.6), transparent);
       border-radius: 50%;
       opacity: 0;
     }
@@ -112,7 +123,7 @@
     .invitation-screen {
       position: absolute; top: 0; left: 0;
       width: 100%; height: 100%; height: 100dvh;
-      background-color: #F2EBE3;
+      background-color: var(--cream);
       opacity: 0; visibility: hidden; transform: translateY(20px);
       transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1), visibility 1s;
       z-index: 10; overflow-y: auto; overflow-x: hidden;
@@ -140,7 +151,7 @@
                   url('A4F12B8D-C8F8-4A6C-B92E-0564A01D6B11 - Лиза Коваленко.jpeg') center -25% / cover;
       display: flex; flex-direction: column; justify-content: space-between;
       padding: calc(28px + env(safe-area-inset-top, 0px)) 20px 60px;
-      color: #fff; flex-shrink: 0;
+      color: var(--text-light); flex-shrink: 0;
     }
     .hero-names {
       font-family: 'Cormorant Garamond', serif;
@@ -171,34 +182,34 @@
       line-height: 1.6; opacity: 0.85; font-weight: 400; font-style: italic;
     }
 
-    /* Приглашение */
+    /* Приглашение (Светлый фон) */
     .inv-details {
-      padding: 80px 30px; background-color: #EAE3D9; color: #1E1E1E;
+      padding: 80px 30px; background-color: var(--cream); color: var(--text-dark);
       display: flex; flex-direction: column; align-items: center;
     }
     .invite-tag {
       font-family: 'Cormorant Garamond', serif; font-size: 16px;
       text-align: right; width: 100%; max-width: 320px;
-      margin-bottom: -8px; letter-spacing: 3px; color: #4A3F35;
+      margin-bottom: -8px; letter-spacing: 3px; color: var(--olive);
       font-weight: 600; text-transform: uppercase;
     }
     .invite-title {
       font-family: 'Cormorant Garamond', serif; font-size: 64px;
       line-height: 0.9; letter-spacing: 0px; text-transform: uppercase;
       font-weight: 700; text-align: left; width: 100%; max-width: 320px;
-      margin-bottom: 25px; color: #1E1E1E;
+      margin-bottom: 25px; color: var(--text-dark);
     }
     .invite-desc {
       font-family: 'Cormorant Garamond', serif; font-size: 20px;
       line-height: 1.6; margin-bottom: 45px; text-align: left;
-      width: 100%; max-width: 320px; border-left: 2px solid #1E1E1E;
-      padding-left: 20px; color: #2B2B2B; font-weight: 500; font-style: italic;
+      width: 100%; max-width: 320px; border-left: 2px solid var(--olive);
+      padding-left: 20px; color: var(--text-dark); font-weight: 500; font-style: italic;
     }
     .calendar-wrap { width: 100%; max-width: 320px; }
     .calendar-month {
       font-family: 'Cormorant Garamond', serif; text-transform: uppercase;
       letter-spacing: 6px; font-size: 20px; margin-bottom: 25px;
-      font-weight: 700; text-align: center; color: #1E1E1E;
+      font-weight: 700; text-align: center; color: var(--text-dark);
     }
     .calendar-grid {
       display: grid; grid-template-columns: repeat(7, 1fr);
@@ -206,32 +217,33 @@
     }
     .day-name {
       font-family: 'Cormorant Garamond', serif; font-size: 13px;
-      font-weight: 700; color: #6B5E53; margin-bottom: 6px;
+      font-weight: 700; color: var(--olive); margin-bottom: 6px;
     }
     .day {
       font-family: 'Cormorant Garamond', serif; font-size: 18px;
       height: 32px; display: flex; align-items: center; justify-content: center;
-      color: #1E1E1E; font-weight: 500;
+      color: var(--text-dark); font-weight: 500;
     }
     .wedding-day {
-      background-color: #1E1E1E; color: #EAE3D9; font-weight: 700;
+      background-color: var(--burgundy); color: var(--text-light); font-weight: 700;
     }
-    .divider { width: 40px; height: 1px; background-color: #1E1E1E; margin-top: 50px; }
+    .divider { width: 40px; height: 1px; background-color: var(--olive); margin-top: 50px; }
 
-    /* Локация */
+    /* Локация (Темный фон) */
     .inv-location {
-      background-color: #F2EBE3; color: #000000; padding: 80px 30px;
+      background-color: var(--burgundy); color: var(--text-light); padding: 80px 30px;
       display: flex; flex-direction: column; align-items: center;
     }
     .location-header { width: 100%; max-width: 320px; margin-bottom: 35px; }
     .location-tag {
       font-family: 'Cormorant Garamond', serif; font-size: 16px;
       text-align: right; margin-bottom: -8px; letter-spacing: 3px;
-      font-weight: 600; text-transform: uppercase;
+      font-weight: 600; text-transform: uppercase; color: var(--olive);
     }
     .location-title {
       font-family: 'Cormorant Garamond', serif; font-size: 72px;
       line-height: 0.9; letter-spacing: 0px; text-transform: uppercase; font-weight: 700;
+      color: var(--text-light);
     }
     .location-info { width: 100%; max-width: 320px; margin-bottom: 25px; text-align: left; }
     .venue-link { text-decoration: none; color: inherit; display: block; }
@@ -239,15 +251,16 @@
     .venue-name {
       font-family: 'Cormorant Garamond', serif; font-weight: 700;
       font-size: 20px; margin-bottom: 10px; letter-spacing: 1px;
+      color: var(--text-light);
     }
     .venue-address {
       font-family: 'Cormorant Garamond', serif; font-size: 18px;
-      line-height: 1.5; color: #333; font-style: italic;
+      line-height: 1.5; color: rgba(245, 240, 235, 0.8); font-style: italic;
       margin-bottom: 12px;
     }
     .venue-map-link {
       font-family: 'Cormorant Garamond', serif; font-size: 17px;
-      color: #6B5E53; font-weight: 600; letter-spacing: 1px;
+      color: var(--olive); font-weight: 600; letter-spacing: 1px;
     }
     .venue-image-container {
       width: 100%; max-width: 340px; height: 220px;
@@ -255,26 +268,26 @@
     }
     .venue-image { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Детали (бывший дресс-код) */
+    /* Детали (Светлый фон) */
     .inv-dresscode {
-      background-color: #EAE3D9; color: #1E1E1E; padding: 80px 30px;
+      background-color: var(--cream); color: var(--text-dark); padding: 80px 30px;
       display: flex; flex-direction: column; align-items: center;
     }
     .dresscode-header { width: 100%; max-width: 320px; margin-bottom: 35px; }
     .dresscode-tag {
       font-family: 'Cormorant Garamond', serif; font-size: 16px;
       text-align: right; margin-bottom: -8px; letter-spacing: 3px;
-      font-weight: 600; text-transform: uppercase;
+      font-weight: 600; text-transform: uppercase; color: var(--olive);
     }
     .dresscode-title {
       font-family: 'Cormorant Garamond', serif; font-size: 64px;
       line-height: 0.9; letter-spacing: 0px; text-transform: uppercase;
-      font-weight: 700; color: #1E1E1E;
+      font-weight: 700; color: var(--text-dark);
     }
     .dresscode-desc {
       font-family: 'Cormorant Garamond', serif; font-size: 20px;
       line-height: 1.6; margin-bottom: 25px; text-align: left;
-      width: 100%; max-width: 320px; color: #2B2B2B;
+      width: 100%; max-width: 320px; color: var(--text-dark);
       font-weight: 500; font-style: italic;
     }
     .color-palette {
@@ -290,43 +303,44 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
       object-fit: cover;
       display: block;
     }
 
-    /* Пожелания (Wishes) */
+    /* Пожелания (Темный фон) */
     .inv-gifts {
-      background-color: #F2EBE3; color: #000000; padding: 80px 30px;
+      background-color: var(--burgundy); color: var(--text-light); padding: 80px 30px;
       display: flex; flex-direction: column; align-items: center;
     }
     .gifts-header { width: 100%; max-width: 320px; margin-bottom: 35px; }
     .gifts-tag {
       font-family: 'Cormorant Garamond', serif; font-size: 16px;
       text-align: right; margin-bottom: -8px; letter-spacing: 3px;
-      font-weight: 600; text-transform: uppercase;
+      font-weight: 600; text-transform: uppercase; color: var(--olive);
     }
     .gifts-title {
       font-family: 'Cormorant Garamond', serif; font-size: 64px;
       line-height: 0.9; letter-spacing: 0px; text-transform: uppercase; font-weight: 700;
+      color: var(--text-light);
     }
     .gifts-desc {
       font-family: 'Cormorant Garamond', serif; font-size: 20px;
       line-height: 1.6; text-align: left; width: 100%; max-width: 320px;
-      color: #2B2B2B; font-weight: 500; font-style: italic;
-      border-left: 2px solid #1E1E1E; padding-left: 20px;
+      color: rgba(245, 240, 235, 0.8); font-weight: 500; font-style: italic;
+      border-left: 2px solid var(--olive); padding-left: 20px;
     }
 
-    /* ----- ТАЙМЕР ----- */
+    /* Таймер (Светлый фон) */
     .countdown-section {
-      background-color: #EAE3D9;
+      background-color: var(--cream);
       padding: 60px 20px 80px;
       display: flex; flex-direction: column; align-items: center;
     }
     .countdown-title {
       font-family: 'Cormorant Garamond', serif; font-size: 26px;
       font-weight: 700; margin-bottom: 25px; letter-spacing: 2px;
-      color: #1E1E1E; text-align: center;
+      color: var(--text-dark); text-align: center;
     }
     .countdown-row {
       display: flex; align-items: baseline; justify-content: center;
@@ -335,21 +349,21 @@
     .countdown-item { display: flex; align-items: baseline; gap: 4px; }
     .countdown-number {
       font-family: 'Cormorant Garamond', serif; font-size: 52px;
-      font-weight: 700; line-height: 1; color: #1E1E1E;
+      font-weight: 700; line-height: 1; color: var(--burgundy);
     }
     .countdown-label {
       font-family: 'Cormorant Garamond', serif; font-size: 18px;
-      font-weight: 600; color: #6B5E53; font-style: italic;
+      font-weight: 600; color: var(--olive); font-style: italic;
     }
     .countdown-separator {
       font-family: 'Cormorant Garamond', serif; font-size: 40px;
-      font-weight: 300; color: #1E1E1E; opacity: 0.6; margin: 0 2px; line-height: 1;
+      font-weight: 300; color: var(--text-dark); opacity: 0.4; margin: 0 2px; line-height: 1;
     }
 
-    /* ----- АНКЕТА ГОСТЯ ----- */
+    /* ----- АНКЕТА ГОСТЯ (Темный фон) ----- */
     .inv-form {
-      background-color: #F2EBE3;
-      color: #000000;
+      background-color: var(--burgundy);
+      color: var(--text-light);
       padding: 80px 25px;
       display: flex;
       flex-direction: column;
@@ -368,6 +382,7 @@
       letter-spacing: 3px;
       font-weight: 600;
       text-transform: uppercase;
+      color: var(--olive);
     }
     .form-title {
       font-family: 'Cormorant Garamond', serif;
@@ -376,6 +391,7 @@
       letter-spacing: 0px;
       text-transform: uppercase;
       font-weight: 700;
+      color: var(--text-light);
     }
     .form-group {
       width: 100%;
@@ -390,12 +406,12 @@
       margin-bottom: 12px;
       letter-spacing: 0.5px;
       font-style: italic;
-      color: #1E1E1E;
+      color: var(--text-light);
     }
     .form-hint {
       font-family: 'Cormorant Garamond', serif;
       font-size: 16px;
-      color: #6B5E53;
+      color: rgba(245, 240, 235, 0.6);
       font-style: italic;
       line-height: 1.4;
       margin: -4px 0 12px 0;
@@ -405,17 +421,18 @@
       padding: 14px 16px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px;
-      border: 1px solid #D6C7B8;
-      background: #FBF8F3;
+      border: 1px solid var(--border-light);
+      background: rgba(245, 240, 235, 0.05);
       outline: none;
       transition: border 0.2s;
-      color: #1E1E1E;
+      color: var(--text-light);
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
     }
+    .form-input::placeholder { color: rgba(245, 240, 235, 0.4); }
     .form-input:focus {
-      border-color: #4A3F35;
+      border-color: var(--olive);
     }
     .radio-group {
       display: flex;
@@ -430,13 +447,13 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px;
       cursor: pointer;
-      color: #1E1E1E;
+      color: var(--text-light);
       font-weight: 500;
     }
     .radio-option input {
       width: 18px;
       height: 18px;
-      accent-color: #4A3F35;
+      accent-color: var(--olive);
       margin: 0;
       flex-shrink: 0;
     }
@@ -453,13 +470,13 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px;
       cursor: pointer;
-      color: #1E1E1E;
+      color: var(--text-light);
       font-weight: 500;
     }
     .checkbox-option input {
       width: 18px;
       height: 18px;
-      accent-color: #4A3F35;
+      accent-color: var(--olive);
       margin: 0;
       flex-shrink: 0;
     }
@@ -468,32 +485,33 @@
       padding: 14px 16px;
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px;
-      border: 1px solid #D6C7B8;
-      background: #FBF8F3;
+      border: 1px solid var(--border-light);
+      background: rgba(245, 240, 235, 0.05);
       resize: vertical;
       min-height: 80px;
       outline: none;
-      color: #1E1E1E;
+      color: var(--text-light);
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
     }
+    .form-textarea::placeholder { color: rgba(245, 240, 235, 0.4); }
     .form-textarea:focus {
-      border-color: #4A3F35;
+      border-color: var(--olive);
     }
     .form-submit {
       width: 100%;
       max-width: 340px;
       padding: 16px;
-      background: #1E1E1E;
-      color: #EAE3D9;
+      background: var(--text-light);
+      color: var(--burgundy);
       border: none;
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 3px;
       cursor: pointer;
-      transition: background 0.25s;
+      transition: background 0.25s, color 0.25s;
       margin-top: 20px;
       text-transform: uppercase;
       -webkit-appearance: none;
@@ -501,33 +519,34 @@
       appearance: none;
     }
     .form-submit:hover {
-      background: #4A3F35;
+      background: var(--olive);
+      color: var(--text-light);
     }
     .other-drink-block {
       display: none;
       margin-top: 14px;
     }
 
-    /* Контакты */
+    /* Контакты (Светлый фон) */
     .inv-contacts {
-      background-color: #EAE3D9; color: #1E1E1E; padding: 80px 30px;
+      background-color: var(--cream); color: var(--text-dark); padding: 80px 30px;
       display: flex; flex-direction: column; align-items: center;
     }
     .contacts-header { width: 100%; max-width: 320px; margin-bottom: 35px; }
     .contacts-tag {
       font-family: 'Cormorant Garamond', serif; font-size: 16px;
       text-align: right; margin-bottom: -8px; letter-spacing: 3px;
-      font-weight: 600; text-transform: uppercase;
+      font-weight: 600; text-transform: uppercase; color: var(--olive);
     }
     .contacts-title {
       font-family: 'Cormorant Garamond', serif; font-size: 64px;
       line-height: 0.9; letter-spacing: 0px; text-transform: uppercase;
-      font-weight: 700; color: #1E1E1E;
+      font-weight: 700; color: var(--text-dark);
     }
     .contacts-desc {
       font-family: 'Cormorant Garamond', serif; font-size: 20px;
       line-height: 1.6; text-align: left; width: 100%; max-width: 320px;
-      color: #2B2B2B; font-weight: 500; font-style: italic; margin-bottom: 30px;
+      color: var(--text-dark); font-weight: 500; font-style: italic; margin-bottom: 30px;
     }
     .contacts-list {
       width: 100%;
@@ -537,7 +556,7 @@
       gap: 25px;
     }
     .contact-item {
-      border-bottom: 1px dashed #B8A99A;
+      border-bottom: 1px dashed var(--border-dark);
       padding-bottom: 18px;
     }
     .contact-item:last-child {
@@ -547,7 +566,7 @@
     .contact-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 17px;
-      color: #6B5E53;
+      color: var(--olive);
       font-style: italic;
       margin-bottom: 8px;
       letter-spacing: 1.5px;
@@ -558,7 +577,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 26px;
       font-weight: 700;
-      color: #1E1E1E;
+      color: var(--text-dark);
       text-decoration: none;
       letter-spacing: 1.5px;
       display: inline-block;
@@ -566,7 +585,7 @@
     }
     .contact-phone:hover,
     .contact-phone:active {
-      color: #6B5E53;
+      color: var(--burgundy);
     }
 
     @media (max-width: 400px) {
@@ -591,7 +610,7 @@
     <!-- Экран конверта -->
     <div id="envelope-overlay" class="envelope-overlay" role="button" aria-label="Открыть приглашение" tabindex="0">
       <img src="конверт.png" alt="Конверт с приглашением" class="envelope-image"
-           onerror="this.style.display='none';this.parentNode.style.background='#eae3d9';">
+           onerror="this.style.display='none';this.parentNode.style.background='var(--cream)';">
     </div>
 
     <!-- Черный экран -->
@@ -922,5 +941,7 @@
       }
     });
   </script>
+</body>
+</html>
 </body>
 </html>
