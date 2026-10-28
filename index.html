@@ -114,9 +114,10 @@
     .screen-second {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center; /* Центрируем содержимое */
+      align-items: center;
       background: #3a161e;
-      padding: 30px 28px 40px;
+      padding: 40px 20px;
       min-height: auto;
       margin-top: 0;
     }
@@ -306,51 +307,14 @@
     }
 
     /* ============ ВТОРОЙ ЭКРАН (ДАТА) ============ */
-    .invitation-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 14px;
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto;
-      padding-top: 20px;
-      padding-bottom: 10px;
-    }
-
-    .invitation-greeting {
-      font-family: "Bad Script", cursive;
-      font-weight: 400;
-      font-size: clamp(1.4rem, 5vw, 2rem);
-      color: #f9f6f0; 
-      text-align: center;
-      line-height: 1.9;
-      width: 100%;
-      letter-spacing: 1px;
-      padding: 0 8px;
-    }
-    .invitation-greeting p { margin-bottom: 4px; }
-
-    .big-date {
-      font-family: "Caveat", "Comic Sans MS", cursive;
-      font-weight: 400;
-      font-size: clamp(3.5rem, 13vw, 5.5rem);
-      color: #f9f6f0; 
-      text-align: center;
-      letter-spacing: 4px;
-      line-height: 1.1;
-      text-shadow: 1.5px 1.5px 0px rgba(249, 246, 240, 0.15);
-      transform: rotate(-0.3deg);
-      margin: 0;
-      word-break: break-word;
-    }
-
+    /* (Классы .invitation-content и .big-date оставлены в CSS на случай, 
+       если вы захотите вернуть текст, но в HTML они больше не используются) */
+    
     .calendar-image-wrapper {
       width: 100%;
-      padding: 0 16px;
-      max-width: 420px;
-      margin: 0 auto 0;
+      padding: 0;
+      max-width: 500px; /* Ограничиваем максимальную ширину картинки */
+      margin: 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -361,6 +325,7 @@
       height: auto;
       display: block;
       object-fit: contain;
+      border-radius: 10px; /* Слегка скругляем углы, если фото прямоугольное */
     }
 
     /* ============ ТРЕТИЙ ЭКРАН (ЛОКАЦИЯ) ============ */
@@ -565,7 +530,7 @@
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
-      padding: 32px 20px 0; 
+      padding: 32px 20px 0;
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       border: 1px solid #d4c3a3;
@@ -660,10 +625,10 @@
 
     .ref-image {
       width: 180px;
-      height: 280px; 
+      height: 280px;
       flex-shrink: 0;
       object-fit: cover;
-      border-radius: 0; 
+      border-radius: 0;
       scroll-snap-align: start;
       display: block;
     }
@@ -999,10 +964,9 @@
       .title-block { margin-bottom: 10px; }
       .dialog-container { gap: 6px; }
       .dialog-area { margin-bottom: 6px; }
-      .calendar-image-wrapper { max-width: 280px; }
+      .calendar-image-wrapper { max-width: 100%; }
       .location-photo-wrapper { max-width: 300px; }
-      .screen-second { padding: 20px 14px 30px; }
-      .invitation-content { gap: 12px; padding-top: 15px; }
+      .screen-second { padding: 30px 14px; }
       .screen-third { padding: 40px 16px; }
       .screen-fourth { padding: 35px 16px 45px; }
       .screen-fifth { padding: 40px 16px 30px; }
@@ -1016,9 +980,7 @@
       .gift-image { width: min(90%, 280px); }
       .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; margin-bottom: 10px; }
       .final-container { gap: 22px; }
-      .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
       .location-content { gap: 16px; }
-      .invitation-greeting { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
       .dresscode-text { font-size: clamp(1rem, 4vw, 1.25rem); }
       .wishes-text { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
       .kids-marquee { padding: 6px 0; }
@@ -1044,15 +1006,14 @@
 
     @media (min-width: 481px) and (max-width: 767px) {
       .first-content { padding: 40px 22px 10px; }
-      .screen-second { padding: 25px 22px 35px; }
-      .invitation-content { gap: 12px; padding-top: 18px; }
+      .screen-second { padding: 40px 22px; }
       .screen-third { padding: 45px 22px; }
       .screen-fourth { padding: 40px 22px 50px; }
       .screen-fifth { padding: 45px 22px 30px; }
       .screen-sixth { padding: 45px 22px 55px 22px; }
       .screen-final { padding: 45px 22px 55px 22px; }
       .location-photo-wrapper { max-width: 360px; }
-      .calendar-image-wrapper { max-width: 380px; }
+      .calendar-image-wrapper { max-width: 450px; }
       .gift-image { width: min(90%, 340px); }
       .submit-btn { margin-bottom: 12px; }
       .final-container { gap: 26px; }
@@ -1067,8 +1028,7 @@
       .invitation-card { max-width: 620px; box-shadow: 0 0 50px rgba(58, 22, 30, 0.08); border-radius: 32px; min-height: 95vh; }
       body { padding: 20px 0; }
       .gift-image { width: min(90%, 420px); }
-      .screen-second { padding: 30px 32px 45px; }
-      .invitation-content { gap: 14px; padding-top: 20px; }
+      .screen-second { padding: 50px 32px; }
       .screen-third { padding: 55px 32px; }
       .screen-fourth { padding: 50px 32px 60px; }
       .screen-fifth { padding: 55px 32px 40px; }
@@ -1076,7 +1036,7 @@
       .screen-final { padding: 50px 32px 60px 32px; }
       .location-content { gap: 22px; }
       .dresscode-container { gap: 24px; }
-      .calendar-image-wrapper { max-width: 420px; }
+      .calendar-image-wrapper { max-width: 500px; }
       .submit-btn { min-width: 240px; padding: 18px 54px; margin-bottom: 15px; }
       .full-width-heart { max-width: 520px; }
       .final-container { gap: 30px; }
@@ -1105,10 +1065,10 @@
       </div>
     </div>
     
-    <!-- Блок с фото детей -->
+    <!-- Блок с фото -->
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <img src="Изображение 1-Photoroom.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
+        <img src="Изображение 2-Photoroom.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
       </div>
     </div>
     
@@ -1131,17 +1091,8 @@
 
   <!-- ЭКРАН 2: Приглашение и Дата (БОРДО) -->
   <section class="screen screen-second">
-    <div class="invitation-content fade-up-item delay-1">
-      <div class="invitation-greeting">
-        <p>Дорогие друзья и близкие,</p>
-        <p>мы приглашаем вас разделить</p>
-        <p>с нами наше свадебное торжество,</p>
-        <p>которое состоится</p>
-      </div>
-      <div class="big-date fade-up-item delay-2">28.05.2027</div>
-    </div>
-    <div class="calendar-image-wrapper fade-up-item delay-3">
-      <img src="Изображение 2-Photoroom.png" alt="Календарь Май 2027" class="calendar-img" onerror="this.src='https://placehold.co/500x560/f9f6f0/3a161e?text=28+МАЯ+2027'; this.onerror=null;">
+    <div class="calendar-image-wrapper fade-up-item delay-1">
+      <img src="Изображение 4-Photoroom.png" alt="Приглашение и дата" class="calendar-img" onerror="this.src='https://placehold.co/600x800/3a161e/f9f6f0?text=Приглашение'; this.onerror=null;">
     </div>
   </section>
 
@@ -1226,7 +1177,7 @@
     <div class="wishes-container">
       <div class="wishes-title fade-up-item delay-1">Пожелания</div>
       <div class="wishes-text fade-up-item delay-2">Можете не переживать по поводу подарка, мы будем благодарны вашим пожеланиям в конвертах! Многие считают важной деталью дарить цветы на свадьбу, но у нас дома не найдётся столько ваз! Поэтому можете заменить на любую альтернативу (по желанию). И помните, самый ценный подарок для нас — ваше присутствие!</div>
-      <div class="fade-up-item delay-3"><img src="Изображение 3-Photoroom.png" alt="Пожелания" class="gift-image" onerror="this.src='https://placehold.co/400x300/3a161e/f9f6f0?text=Пожелания';"></div>
+      <div class="fade-up-item delay-3"><img src="конверт.png" alt="Конверт" class="gift-image" onerror="this.src='https://placehold.co/400x300/3a161e/f9f6f0?text=Конверт';"></div>
     </div>
   </section>
 
