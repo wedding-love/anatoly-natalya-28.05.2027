@@ -114,10 +114,10 @@
     .screen-second {
       display: flex;
       flex-direction: column;
-      justify-content: center; /* Центрируем содержимое */
+      justify-content: center;
       align-items: center;
       background: #3a161e;
-      padding: 40px 20px;
+      padding: 50px 20px;
       min-height: auto;
       margin-top: 0;
     }
@@ -307,10 +307,48 @@
     }
 
     /* ============ ВТОРОЙ ЭКРАН (ДАТА) ============ */
+    .invitation-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+
+    .invitation-greeting {
+      font-family: "Bad Script", cursive;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      color: #f9f6f0; 
+      text-align: center;
+      line-height: 1.9;
+      width: 100%;
+      letter-spacing: 1px;
+      padding: 0 8px;
+    }
+    .invitation-greeting p { margin-bottom: 4px; }
+
+    .big-date {
+      font-family: "Caveat", "Comic Sans MS", cursive;
+      font-weight: 400;
+      font-size: clamp(3.5rem, 13vw, 5.5rem);
+      color: #f9f6f0; 
+      text-align: center;
+      letter-spacing: 4px;
+      line-height: 1.1;
+      text-shadow: 1.5px 1.5px 0px rgba(249, 246, 240, 0.15);
+      transform: rotate(-0.3deg);
+      margin: 0;
+      word-break: break-word;
+    }
+
     .calendar-image-wrapper {
       width: 100%;
       padding: 0;
-      max-width: 500px; /* Ограничиваем максимальную ширину картинки */
+      max-width: 500px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -977,7 +1015,9 @@
       .gift-image { width: min(90%, 280px); }
       .submit-btn { min-width: 180px; padding: 14px 30px; font-size: 1rem; margin-bottom: 10px; }
       .final-container { gap: 22px; }
+      .big-date { font-size: clamp(2.8rem, 11vw, 3.8rem); }
       .location-content { gap: 16px; }
+      .invitation-greeting { font-size: clamp(1.2rem, 4.5vw, 1.6rem); }
       .dresscode-text { font-size: clamp(1rem, 4vw, 1.25rem); }
       .wishes-text { font-size: clamp(0.95rem, 3.8vw, 1.15rem); }
       .kids-marquee { padding: 6px 0; }
@@ -1062,7 +1102,7 @@
       </div>
     </div>
     
-    <!-- Блок с фото -->
+    <!-- Блок с фото на весь экран -->
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
         <img src="Изображение 1-Photoroom.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
@@ -1088,7 +1128,18 @@
 
   <!-- ЭКРАН 2: Приглашение и Дата (БОРДО) -->
   <section class="screen screen-second">
-    <div class="calendar-image-wrapper fade-up-item delay-1">
+    <!-- Вернули текст приглашения и дату -->
+    <div class="invitation-content fade-up-item delay-1">
+      <div class="invitation-greeting">
+        <p>Дорогие друзья и близкие,</p>
+        <p>мы приглашаем вас разделить</p>
+        <p>с нами наше свадебное торжество,</p>
+        <p>которое состоится</p>
+      </div>
+      <div class="big-date fade-up-item delay-2">28.05.2027</div>
+    </div>
+    <!-- Фото под датой -->
+    <div class="calendar-image-wrapper fade-up-item delay-3">
       <img src="Изображение 4-Photoroom.png" alt="Приглашение и дата" class="calendar-img" onerror="this.src='https://placehold.co/600x800/3a161e/f9f6f0?text=Приглашение'; this.onerror=null;">
     </div>
   </section>
@@ -1173,7 +1224,9 @@
   <section class="screen screen-sixth">
     <div class="wishes-container">
       <div class="wishes-title fade-up-item delay-1">Пожелания</div>
+      <!-- Текст пожеланий на месте -->
       <div class="wishes-text fade-up-item delay-2">Можете не переживать по поводу подарка, мы будем благодарны вашим пожеланиям в конвертах! Многие считают важной деталью дарить цветы на свадьбу, но у нас дома не найдётся столько ваз! Поэтому можете заменить на любую альтернативу (по желанию). И помните, самый ценный подарок для нас — ваше присутствие!</div>
+      <!-- Фото пожеланий -->
       <div class="fade-up-item delay-3"><img src="Изображение 3-Photoroom.png" alt="Пожелания" class="gift-image" onerror="this.src='https://placehold.co/400x300/3a161e/f9f6f0?text=Пожелания';"></div>
     </div>
   </section>
