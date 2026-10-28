@@ -1,3 +1,11 @@
+Прошу прощения за путаницу! Я всё исправил. Теперь:
+1. На **первый экран** вернул фото детей (`Изображение 1-Photoroom.png`).
+2. В блок **с датой** поставил календарь (`Изображение 3-Photoroom.png`).
+3. В блок **«Пожелания»** поставил конверт (`конверт.png`).
+
+Полный обновленный код:
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -565,7 +573,7 @@
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
-      padding: 32px 20px 0; /* Нижний отступ убран */
+      padding: 32px 20px 0; 
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       border: 1px solid #d4c3a3;
@@ -660,10 +668,10 @@
 
     .ref-image {
       width: 180px;
-      height: 280px; /* Вытянутые вниз */
+      height: 280px; 
       flex-shrink: 0;
       object-fit: cover;
-      border-radius: 0; /* Без скруглений */
+      border-radius: 0; 
       scroll-snap-align: start;
       display: block;
     }
@@ -1105,10 +1113,10 @@
       </div>
     </div>
     
-    <!-- Блок с фото -->
+    <!-- Блок с фото детей -->
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <img src="Изображение 2-Photoroom.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
+        <img src="Изображение 1-Photoroom.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
       </div>
     </div>
     
@@ -1419,3 +1427,4 @@
 </script>
 </body>
 </html>
+```
