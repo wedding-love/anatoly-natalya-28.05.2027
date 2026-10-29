@@ -177,13 +177,20 @@
       text-align: center;
     }
 
-    .title-block { text-align: center; width: 100%; margin-bottom: 14px; }
+    .title-block { 
+      text-align: center; 
+      width: 100%; 
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .sub-title {
       display: block;
       font-family: "Bad Script", cursive;
       font-weight: 400;
-      font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+      font-size: clamp(1.3rem, 5vw, 2rem);
       color: #3a161e;
       letter-spacing: 2px;
       margin-bottom: -4px;
@@ -194,7 +201,7 @@
       display: block;
       font-family: "Caveat", "Comic Sans MS", cursive;
       font-weight: 400;
-      font-size: clamp(3.5rem, 13vw, 6rem);
+      font-size: clamp(3.8rem, 14vw, 6.5rem);
       color: #3a161e;
       line-height: 0.9;
       letter-spacing: 1px;
@@ -202,6 +209,17 @@
       transform: rotate(-0.5deg);
       margin-top: -5px;
       word-break: break-word;
+    }
+
+    /* Имена пары */
+    .couple-names {
+      font-family: "Marck Script", cursive;
+      font-size: clamp(2.4rem, 8vw, 3.6rem);
+      color: #3a161e;
+      margin: 12px 0 4px;
+      line-height: 1.2;
+      font-weight: 400;
+      text-shadow: 0.5px 0.5px 0px rgba(58, 22, 30, 0.1);
     }
 
     .dialog-area {
@@ -1105,6 +1123,8 @@
       <div class="title-block fade-up-item delay-1">
         <span class="sub-title">наконец-то</span>
         <span class="primary-title">мы женимся</span>
+        <!-- Имена пары -->
+        <div class="couple-names">Анатолий и Наталья</div>
       </div>
       <div class="dialog-area">
         <div class="dialog-container fade-up-item delay-2">
@@ -1117,8 +1137,7 @@
     <!-- Блок с фото на весь экран -->
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <!-- Заменили фото на Изображение 2.jpeg -->
-        <img src="Изображение 2.jpeg" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
+        <img src="Изображение_2-removebg-preview.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
       </div>
     </div>
     
