@@ -177,7 +177,14 @@
       text-align: center;
     }
 
-    .title-block { text-align: center; width: 100%; margin-bottom: 14px; }
+    .title-block { 
+      text-align: center; 
+      width: 100%; 
+      margin-bottom: 14px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .sub-title {
       display: block;
@@ -202,6 +209,35 @@
       transform: rotate(-0.5deg);
       margin-top: -5px;
       word-break: break-word;
+    }
+
+    /* Новые стили для имен и текста с фото */
+    .couple-names {
+      font-family: "Marck Script", cursive;
+      font-size: clamp(2.5rem, 8vw, 3.8rem);
+      color: #3a161e;
+      margin: 10px 0 5px;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    .marriage-date-top {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+      color: #3a161e;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .happiness-awaits {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      color: #3a161e;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     .dialog-area {
@@ -594,7 +630,7 @@
       margin-bottom: 24px;
     }
 
-    /* ====== ПАЛИТРА (9 ФОТО-КРУЖОЧКОВ) ====== */
+    /* ====== ПАЛИТРА (10 ФОТО-КРУЖОЧКОВ) ====== */
     .color-photos-grid {
       display: flex;
       flex-wrap: wrap;
@@ -638,7 +674,7 @@
       text-align: center;
       letter-spacing: 1px;
       margin-bottom: 14px;
-      padding: 0 4px;
+      padding: 0 16px;
     }
 
     .images-row {
@@ -669,6 +705,17 @@
     }
     .ref-image:hover {
       opacity: 0.9;
+    }
+
+    .ref-footer-text {
+      font-family: "Bad Script", cursive;
+      font-weight: 400;
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      color: #3a161e;
+      text-align: center;
+      line-height: 1.6;
+      padding: 20px 24px 24px;
+      letter-spacing: 0.3px;
     }
 
     /* ============ ШЕСТОЙ ЭКРАН (ПОЖЕЛАНИЯ) ============ */
@@ -1039,6 +1086,7 @@
       
       .references-wrapper { margin-left: -14px; margin-right: -14px; width: calc(100% + 28px); }
       .ref-image { width: 140px; height: 220px; } 
+      .ref-footer-text { padding: 16px 16px 20px; }
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
@@ -1093,7 +1141,13 @@
       <div class="title-block fade-up-item delay-1">
         <span class="sub-title">наконец-то</span>
         <span class="primary-title">мы женимся</span>
+        
+        <!-- Добавленные имена и текст -->
+        <div class="couple-names">Александр и София</div>
+        <div class="marriage-date-top">27.12.2018 - ∞</div>
+        <div class="happiness-awaits">счастье нас с тобой ждет</div>
       </div>
+      
       <div class="dialog-area">
         <div class="dialog-container fade-up-item delay-2">
           <div class="dialog-text dialog-left">— интересно, кто будет моим мужем, когда вырасту?</div>
@@ -1128,7 +1182,6 @@
 
   <!-- ЭКРАН 2: Приглашение и Дата (БОРДО) -->
   <section class="screen screen-second">
-    <!-- Вернули текст приглашения и дату -->
     <div class="invitation-content fade-up-item delay-1">
       <div class="invitation-greeting">
         <p>Дорогие друзья и близкие,</p>
@@ -1138,7 +1191,6 @@
       </div>
       <div class="big-date fade-up-item delay-2">28.05.2027</div>
     </div>
-    <!-- Фото под датой -->
     <div class="calendar-image-wrapper fade-up-item delay-3">
       <img src="Изображение 4-Photoroom.png" alt="Приглашение и дата" class="calendar-img" onerror="this.src='https://placehold.co/600x800/3a161e/f9f6f0?text=Приглашение'; this.onerror=null;">
     </div>
@@ -1156,7 +1208,7 @@
       </div>
       <div class="location-name fade-up-item delay-2">Wooden Villa</div>
       <div class="location-address fade-up-item delay-3">Узлесная ул., 58,<br>агрогородок Колодищи</div>
-      <a href="https://yandex.by/maps/org/wooden_villa/1475842676/?ll=27.808558%2C53.950369&mode=search&sctx=ZAAAAAgBEAAaKAoSCXmu78NBjjtAES%2F6CtKM80pAEhIJVpkprb8l2j8Rd9uF5jqNxj8iBgABAgMEBSgKOABAnQFIAWoCdWGdAc3MzD2gAQCoAQC9AURq%2FVjCAQX0pN6%2FBYICUVdvb2RlbiBWaWxsYSwg0KPQt9C70LXRgdC90LDRjyDRg9C7LiwgNTgsINCw0LPRgNC%2B0LPQvtGA0L7QtNC%2B0Log0JrQvtC70L7QtNC40YnQuIoCAJICBjE3MDgxNZoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=27.808558%2C53.950369&sspn=0.012767%2C0.005499&text=Wooden%20Villa%2C%20Узлесная%20ул.%2C%2058%2C%20агрогородок%20Колодищи&z=17" target="_blank" rel="noopener" class="location-btn fade-up-item delay-4">Показать на карте</a>
+      <a href="https://yandex.by/maps/org/wooden_villa/1475842676/?ll=27.808558%2C53.950369&mode=search&sctx=ZAAAAAgBEAAaKAoSCXmu78NBjjtAES%2F6CtKM80pAEhIJVpkprb8l2j8Rd9uF5jqNxj8iBgABAgMEBSgKOABAnQFIAWoCdWGdAc3MzD2gAQCoAQC9AURq%2FVjCAQX0pN6%2FBYICUVdvb2RlbiBWaWxsYSwg0KPQt9C70LXRgdC90LDRjyDRg9C7LiwgNTgsINCw0LPRgNC%2B0LPQvtGA0L7QtNC%2BLog0JrQvtC70L7QtNC40YnQuIoCAJICBjE3MDgxNZoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=27.808558%2C53.950369&sspn=0.012767%2C0.005499&text=Wooden%20Villa%2C%20Узлесная%20ул.%2C%2058%2C%20агрогородок%20Колодищи&z=17" target="_blank" rel="noopener" class="location-btn fade-up-item delay-4">Показать на карте</a>
     </div>
   </section>
 
@@ -1168,7 +1220,7 @@
     <div class="timing-grid">
       <div class="timing-item fade-up-item delay-1">
         <div class="timing-time">15:00</div>
-        <div class="timing-desc">Сбор гостей <span>Встреча и размещение</span></div>
+        <div class="timing-desc">Сбор гостей <span>Встреча и фуршет</span></div>
       </div>
       <div class="timing-item fade-up-item delay-2">
         <div class="timing-time">16:00</div>
@@ -1193,7 +1245,7 @@
         <img src="скотч.png" alt="скотч" class="tape-sticker" onerror="this.style.display='none';">
         <div class="dresscode-text">Будем рады, если вы поддержите цветовую палитру нашей свадьбы при выборе образа.</div>
 
-        <!-- Палитра из 9 фото в виде кружочков -->
+        <!-- Палитра (10 фото) -->
         <div class="color-photos-grid">
           <img src="14.jpg" class="color-photo" alt="Палитра 1" onerror="this.src='https://placehold.co/150x150/3a161e/f9f6f0?text=1';">
           <img src="Изображение.jpeg" class="color-photo" alt="Палитра 2" onerror="this.src='https://placehold.co/150x150/524c36/f9f6f0?text=2';">
@@ -1204,16 +1256,22 @@
           <img src="358a5c33b7099ff3307a92ce7a816678.png" class="color-photo" alt="Палитра 7" onerror="this.src='https://placehold.co/150x150/524c36/f9f6f0?text=7';">
           <img src="c8fe630d198bb94ff002e338f3e6efce.png" class="color-photo" alt="Палитра 8" onerror="this.src='https://placehold.co/150x150/b58388/f9f6f0?text=8';">
           <img src="5dbd7e0aaaed7dcad2e57a93d142095a.png" class="color-photo" alt="Палитра 9" onerror="this.src='https://placehold.co/150x150/c1b29b/3a161e?text=9';">
+          <!-- Добавленное фото -->
+          <img src="Изображение 1.jpeg" class="color-photo" alt="Палитра 10" onerror="this.src='https://placehold.co/150x150/3a161e/f9f6f0?text=10';">
         </div>
 
-        <!-- Примеры нарядов (без отступов) -->
+        <!-- Примеры нарядов -->
         <div class="references-wrapper">
-          <div class="ref-subtitle">Примеры нарядов</div>
+          <div class="ref-subtitle">Ниже собрали несколько образов для вдохновения</div>
           <div class="images-row">
             <img src="e5cae9e12011e28ea6418c47674250dd.jpg" class="ref-image" alt="Пример наряда 1" onerror="this.src='https://placehold.co/300x400/3a161e/f9f6f0?text=1';">
             <img src="a5d1bfa5376dab8ccce71c17cda1d93c.jpg" class="ref-image" alt="Пример наряда 2" onerror="this.src='https://placehold.co/300x400/524c36/f9f6f0?text=2';">
             <img src="93e1938ffefa5c7850d59bb6ff7c5267.jpg" class="ref-image" alt="Пример наряда 3" onerror="this.src='https://placehold.co/300x400/3a161e/f9f6f0?text=3';">
             <img src="257a5848a4bb34a29054b23a2082b9cc.jpg" class="ref-image" alt="Пример наряда 4" onerror="this.src='https://placehold.co/300x400/524c36/f9f6f0?text=4';">
+          </div>
+          <!-- Добавленный текст -->
+          <div class="ref-footer-text">
+            Это лишь примеры подходящих оттенков, а не готовые образы, которые нужно повторять. Будем рады, если вы поддержите цветовую гамму нашей свадьбы!
           </div>
         </div>
       </div>
@@ -1224,9 +1282,7 @@
   <section class="screen screen-sixth">
     <div class="wishes-container">
       <div class="wishes-title fade-up-item delay-1">Пожелания</div>
-      <!-- Текст пожеланий на месте -->
       <div class="wishes-text fade-up-item delay-2">Можете не переживать по поводу подарка, мы будем благодарны вашим пожеланиям в конвертах! Многие считают важной деталью дарить цветы на свадьбу, но у нас дома не найдётся столько ваз! Поэтому можете заменить на любую альтернативу (по желанию). И помните, самый ценный подарок для нас — ваше присутствие!</div>
-      <!-- Фото пожеланий -->
       <div class="fade-up-item delay-3"><img src="Изображение 3-Photoroom.png" alt="Пожелания" class="gift-image" onerror="this.src='https://placehold.co/400x300/3a161e/f9f6f0?text=Пожелания';"></div>
     </div>
   </section>
@@ -1268,7 +1324,8 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">Нужен ли вам трансфер обратно?</label>
+          <!-- Измененный текст -->
+          <label class="form-label">Планируете ли вы воспользоваться обратным трансфером до Минска?</label>
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="transfer" value="Да, нужен"> Да, нужен</label>
             <label class="radio-label"><input type="radio" name="transfer" value="Нет, не нужен"> Нет, не нужен</label>
