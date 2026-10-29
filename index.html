@@ -173,14 +173,14 @@
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding: 40px 24px 20px; /* Увеличен нижний отступ для воздуха */
+      padding: 60px 24px 20px; /* Увеличен верхний отступ (было 40px) */
       text-align: center;
     }
 
     .title-block { 
       text-align: center; 
       width: 100%; 
-      margin-bottom: 20px; /* Увеличен отступ после заголовка */
+      margin-bottom: 24px; /* Увеличен отступ после заголовка */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -216,7 +216,7 @@
       font-family: "Marck Script", cursive;
       font-size: clamp(2.2rem, 7.5vw, 3.4rem);
       color: #3a161e;
-      margin: 24px 0 8px; /* Увеличен отступ сверху и снизу */
+      margin: 24px 0 12px; /* Увеличен отступ сверху и снизу */
       line-height: 1.2;
       font-weight: 400;
       text-shadow: 0.5px 0.5px 0px rgba(58, 22, 30, 0.1);
@@ -228,7 +228,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 8px;
+      margin-bottom: 12px; /* Увеличен отступ снизу */
     }
 
     .dialog-container {
@@ -236,7 +236,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 20px; /* Увеличен зазор между репликами */
+      gap: 24px; /* Увеличен зазор между репликами */
       flex-wrap: wrap;
       padding: 0 4px;
     }
@@ -260,7 +260,7 @@
       justify-content: center;
       align-items: flex-end;
       min-height: 0;
-      padding: 10px 12px 0; /* Добавлен отступ сверху перед фото */
+      padding: 12px 12px 0; /* Добавлен отступ сверху перед фото */
       width: 100%;
     }
 
@@ -1025,10 +1025,10 @@
 
     /* ============ АДАПТИВ ============ */
     @media (max-width: 480px) {
-      .first-content { padding: 30px 14px 16px; }
-      .title-block { margin-bottom: 16px; }
-      .dialog-container { gap: 12px; }
-      .dialog-area { margin-bottom: 6px; }
+      .first-content { padding: 50px 14px 16px; } /* Увеличен верхний отступ */
+      .title-block { margin-bottom: 20px; }
+      .dialog-container { gap: 16px; }
+      .dialog-area { margin-bottom: 10px; }
       .calendar-image-wrapper { max-width: 100%; }
       .location-photo-wrapper { max-width: 300px; }
       .screen-second { padding: 30px 14px; }
@@ -1073,7 +1073,7 @@
     }
 
     @media (min-width: 481px) and (max-width: 767px) {
-      .first-content { padding: 40px 22px 18px; }
+      .first-content { padding: 60px 22px 18px; }
       .screen-second { padding: 40px 22px; }
       .screen-third { padding: 45px 22px; }
       .screen-fourth { padding: 40px 22px 50px; }
@@ -1225,6 +1225,7 @@
       <div class="dresscode-title fade-up-item delay-1">Дресс-код</div>
       <div class="white-rectangle fade-up-item delay-2">
         <img src="скотч.png" alt="скотч" class="tape-sticker" onerror="this.style.display='none';">
+        <!-- Фраза "Будем рады" с новой строки -->
         <div class="dresscode-text">Будем рады,<br>если вы поддержите цветовую палитру<br>нашей свадьбы при выборе образа.</div>
 
         <!-- Палитра (10 фото) -->
