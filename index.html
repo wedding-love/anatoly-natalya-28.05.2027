@@ -177,14 +177,7 @@
       text-align: center;
     }
 
-    .title-block { 
-      text-align: center; 
-      width: 100%; 
-      margin-bottom: 14px; 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    .title-block { text-align: center; width: 100%; margin-bottom: 14px; }
 
     .sub-title {
       display: block;
@@ -209,35 +202,6 @@
       transform: rotate(-0.5deg);
       margin-top: -5px;
       word-break: break-word;
-    }
-
-    /* Новые стили для имен и текста с фото */
-    .couple-names {
-      font-family: "Marck Script", cursive;
-      font-size: clamp(2.5rem, 8vw, 3.8rem);
-      color: #3a161e;
-      margin: 10px 0 5px;
-      line-height: 1.2;
-      font-weight: 400;
-    }
-
-    .marriage-date-top {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 500;
-      font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-      color: #3a161e;
-      letter-spacing: 2px;
-      margin-bottom: 4px;
-    }
-
-    .happiness-awaits {
-      font-family: "Playfair Display", serif;
-      font-weight: 600;
-      font-style: italic;
-      font-size: clamp(0.9rem, 3vw, 1.1rem);
-      color: #3a161e;
-      letter-spacing: 3px;
-      text-transform: uppercase;
     }
 
     .dialog-area {
@@ -1141,13 +1105,7 @@
       <div class="title-block fade-up-item delay-1">
         <span class="sub-title">наконец-то</span>
         <span class="primary-title">мы женимся</span>
-        
-        <!-- Добавленные имена и текст -->
-        <div class="couple-names">Александр и София</div>
-        <div class="marriage-date-top">27.12.2018 - ∞</div>
-        <div class="happiness-awaits">счастье нас с тобой ждет</div>
       </div>
-      
       <div class="dialog-area">
         <div class="dialog-container fade-up-item delay-2">
           <div class="dialog-text dialog-left">— интересно, кто будет моим мужем, когда вырасту?</div>
@@ -1159,7 +1117,8 @@
     <!-- Блок с фото на весь экран -->
     <div class="hero-image-section hero-fade delay-3">
       <div class="full-width-heart">
-        <img src="Изображение 1-Photoroom.png" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
+        <!-- Заменили фото на Изображение 2.jpeg -->
+        <img src="Изображение 2.jpeg" alt="Фото пары" class="kids-image" onerror="this.src='https://placehold.co/600x400/f9f6f0/3a161e?text=Фото'; this.onerror=null;">
       </div>
     </div>
     
@@ -1256,7 +1215,6 @@
           <img src="358a5c33b7099ff3307a92ce7a816678.png" class="color-photo" alt="Палитра 7" onerror="this.src='https://placehold.co/150x150/524c36/f9f6f0?text=7';">
           <img src="c8fe630d198bb94ff002e338f3e6efce.png" class="color-photo" alt="Палитра 8" onerror="this.src='https://placehold.co/150x150/b58388/f9f6f0?text=8';">
           <img src="5dbd7e0aaaed7dcad2e57a93d142095a.png" class="color-photo" alt="Палитра 9" onerror="this.src='https://placehold.co/150x150/c1b29b/3a161e?text=9';">
-          <!-- Добавленное фото -->
           <img src="Изображение 1.jpeg" class="color-photo" alt="Палитра 10" onerror="this.src='https://placehold.co/150x150/3a161e/f9f6f0?text=10';">
         </div>
 
@@ -1269,7 +1227,6 @@
             <img src="93e1938ffefa5c7850d59bb6ff7c5267.jpg" class="ref-image" alt="Пример наряда 3" onerror="this.src='https://placehold.co/300x400/3a161e/f9f6f0?text=3';">
             <img src="257a5848a4bb34a29054b23a2082b9cc.jpg" class="ref-image" alt="Пример наряда 4" onerror="this.src='https://placehold.co/300x400/524c36/f9f6f0?text=4';">
           </div>
-          <!-- Добавленный текст -->
           <div class="ref-footer-text">
             Это лишь примеры подходящих оттенков, а не готовые образы, которые нужно повторять. Будем рады, если вы поддержите цветовую гамму нашей свадьбы!
           </div>
@@ -1324,7 +1281,6 @@
         </div>
 
         <div class="form-group">
-          <!-- Измененный текст -->
           <label class="form-label">Планируете ли вы воспользоваться обратным трансфером до Минска?</label>
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="transfer" value="Да, нужен"> Да, нужен</label>
